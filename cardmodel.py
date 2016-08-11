@@ -34,30 +34,46 @@ class Deck(object):
     def pop_card(self):
         return self.cards.pop()
 
-    def add_card(self, card):
-        self.cards.append(card)
+    def add_card(self):
+        self.cards.append(self.cards)
+
+
 
 
 deck = Deck()
 print(deck)
-card1 =Card(2, 1)
-print(card1)
+card2 =Card(2,7)
+print(card2)
+
 
 class Hand:
-    def __init__(self, label=''):
-        self.cards = Card(3,5)
-        self.label = label
+    def __init__(self):
+        self.cards = [Card(), Card()]
 
+    def __str__(self):
+        return str(self.cards)
 
-    def add_card(self):
-        pass
+    def draw(self, deck):
+        card = deck.draw()
+        self.cards.append(card)
+        return card
 
+hand = Hand()
 
-hand1 = Hand('Player')
-hand2 = Hand('Dealer')
-print(hand1.cards)
-print(hand1.label)
-print(hand2.label)
+print(hand.cards)
+
+class Player:
+    def __init__(self):
+        self.name = 'Player'
+        self.hand = Hand()
+
+    def __str__(self):
+        return "{} has  ".format(self.name)+ str(self.hand)
+    
+print(Player)
+player1 = Player()
+print(player1)
+
 
 
 
