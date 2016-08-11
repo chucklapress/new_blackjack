@@ -43,23 +43,24 @@ print(deck)
 card1 =Card(2, 1)
 print(card1)
 
-class Hand(Deck):
+class Hand:
     def __init__(self, label=''):
-        self.cards = []
+        self.cards = Card(3,5)
         self.label = label
 
-    def move_cards(self, hand, num):
-        for item in range(num):
-            hand.add_card(self.pop_card())
+
+    def add_card(self):
+        pass
 
 
-hand = Hand('new hand')
-print(hand.cards)
-print(hand.label)
-deck = Deck()
-card = deck.pop_card()
-hand.add_card(card)
-print(hand)
+hand1 = Hand('Player')
+hand2 = Hand('Dealer')
+print(hand1.cards)
+print(hand1.label)
+print(hand2.label)
+
+
+
 
 
 
