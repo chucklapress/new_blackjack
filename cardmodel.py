@@ -40,6 +40,7 @@ class Deck(object):
 
 
 
+
 deck = Deck()
 print(deck)
 card2 =Card(2,7)
@@ -69,11 +70,21 @@ class Player:
 
     def __str__(self):
         return "{} has  ".format(self.name)+ str(self.hand)
-    
+
 print(Player)
 player1 = Player()
-print(player1)
+print(player1.hand)
 
+class Dealer(Player):
+    def __init__(self):
+        self.name = 'Dealer'
+        self.hand = Hand()
+
+    def __str__(self):
+        return "{} has  ".format(self.name) + str(self.hand)
+print(Dealer)
+house_dealer = Dealer()
+print(house_dealer)
 
 
 
