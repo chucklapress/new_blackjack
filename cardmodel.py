@@ -11,7 +11,7 @@ class Card(object):
                   '8', '9', '10', 'Jack', 'Queen', 'King']
 
     def __str__(self):
-        return '%s of %s' % (Card.rank_names[self.rank],
+        return '{} of {}'.format(Card.rank_names[self.rank],
                              Card.suit_names[self.suit])
 
 class Deck(object):
@@ -79,7 +79,7 @@ class Player:
 
 print(Player)
 player1 = Player()
-print(player1.hand)
+print(player1)
 
 class Dealer(Player):
     def __init__(self):
