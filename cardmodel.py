@@ -7,7 +7,7 @@ class Card(object):
         self.rank = rank
 
     suit_names = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
-    rank_names = [None, 'Ace', '2', '3', '4', '5', '6', '7',
+    rank_names = [None,'Ace', '2', '3', '4', '5', '6', '7',
                   '8', '9', '10', 'Jack', 'Queen', 'King']
 
     def __str__(self):
@@ -43,13 +43,19 @@ class Deck(object):
 
 deck = Deck()
 print(deck)
-card2 =Card(2,7)
+card2 =Card(2,9)
 print(card2)
+deck1 = deck.cards
+for card in deck1:
+    print(card)
+
+
 
 
 class Hand:
+
     def __init__(self):
-        self.cards = [Card(), Card()]
+        self.cards = [Card(),Card()]
 
     def __str__(self):
         return str(self.cards)
@@ -85,6 +91,7 @@ class Dealer(Player):
 print(Dealer)
 house_dealer = Dealer()
 print(house_dealer)
+
 
 
 
