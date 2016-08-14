@@ -42,6 +42,7 @@ class Deck(object):
 
 
 deck = Deck()
+deck.shuffle()
 print(deck)
 card2 =Card(2,9)
 print(card2)
@@ -60,12 +61,16 @@ class Hand:
     def __str__(self):
         return str(self.cards)
 
+
     def draw(self, deck):
         card = deck.draw()
         self.cards.append(card)
         return card
+    print(card)
 
 hand = Hand()
+new_hand = hand.draw
+print(new_hand)
 
 print(hand.cards)
 
