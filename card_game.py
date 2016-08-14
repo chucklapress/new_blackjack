@@ -62,6 +62,11 @@ class Deck(Hand):
                     self.give(top_card, hand)
                 else:
                     print("Out of cards")
+    def hit(self,hand):
+        if self.cards:
+            top_card = self.cards[0]
+            self.give(top_card,hand)
+
 
 deck1 = Deck()
 print(deck1)
@@ -80,6 +85,24 @@ print(deck1)
 deck1.deal(hands,per_hand=1)
 print(Player_hand)
 print(Dealer_hand)
+deck1.clear()
+print(deck1)
+deck1.populate()
+deck1.shuffle()
+print(deck1)
+new_hand = Hand()
+other_new_hand = Hand()
+new_hands = [new_hand, other_new_hand]
+deck1.deal(new_hands,per_hand=2)
+print(new_hand)
+print(other_new_hand)
+deck1.hit(new_hand)
+print(new_hand)
+deck1.hit(other_new_hand)
+print(other_new_hand)
+deck1.hit(other_new_hand)
+print(other_new_hand)
+print(deck1)
 
 
 
