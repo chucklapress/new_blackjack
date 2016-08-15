@@ -43,9 +43,8 @@ class Deck(object):
 
 deck = Deck()
 deck.shuffle()
-print(deck)
-card2 =Card(2,9)
-print(card2)
+
+
 deck1 = deck.cards
 for card in deck1:
     print(card)
@@ -68,11 +67,10 @@ class Hand:
         return card
     print(card)
 
-hand = Hand()
-new_hand = hand.draw
-print(new_hand)
 
-print(hand.cards)
+
+
+
 
 class Player:
     def __init__(self):

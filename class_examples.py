@@ -45,7 +45,7 @@ class Pet:
         return self.species
 
     def __str__(self):
-        return "%s is a %s" % (self.name, self.species)
+        return "{} is a {}".format(self.name, self.species)
 
 a = Pet('jerry','mouse')
 b = Pet('tom','cat')
