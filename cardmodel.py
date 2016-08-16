@@ -84,7 +84,7 @@ print(Player)
 player1 = Player()
 print(player1)
 
-class Dealer(Player):
+class Dealer:
     def __init__(self):
         self.name = 'Dealer'
         self.hand = Hand()
@@ -94,9 +94,6 @@ class Dealer(Player):
 print(Dealer)
 house_dealer = Dealer()
 print(house_dealer)
-
-
-
 
 
 

@@ -4,11 +4,14 @@ import random
 class Card(object):
     RANKS = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     SUITS = ["c","d","h","s"]
+    Values = {"A": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8,
+              "9": 9, "10": 10, "J": 10, "Q": 10,"K": 10}
 
-    def __init__(self,rank,suit):
+    def __init__(self,rank,suit,values):
 
         self.rank = rank
         self.suit = suit
+        self.values = values
 
     def __str__(self):
         card = self.rank + self.suit
@@ -35,7 +38,6 @@ class Hand(object):
     def add(self, card):
         self.cards.append(card)
 
-
     def give(self,card, other_hand):
         self.cards.remove(card)
         other_hand.add(card)
@@ -45,7 +47,7 @@ class Deck(Hand):
     def create(self):
         for suit in Card.SUITS:
             for rank in Card.RANKS:
-                self.add(Card(rank, suit))
+                self.add(Card(rank, suit, values=0))
 
     def shuffle(self):
         random.shuffle(self.cards)
@@ -59,8 +61,6 @@ class Deck(Hand):
     def hit(self, hand):
         top_card = self.cards[0]
         self.give(top_card, hand)
-
-
 
 deck = Deck()
 deck.create()
@@ -84,9 +84,14 @@ class Player:
     def __str__(self):
         return "{} has  ".format(self.name) + str(self.hand)
 
-print(Player())
+    def show_hand(self):
+        return "{} has: ".format(self.name) + ' '.join([str(card) for card in self.hand.cards])
 
-class Dealer(Player):
+Summer = Player()
+print(Summer.show_hand())
+
+
+class Dealer:
     def __init__(self):
         self.name = 'Dealer'
         self.hand = Dealer_hand
@@ -94,24 +99,16 @@ class Dealer(Player):
     def __str__(self):
         return "{} has  ".format(self.name) + str(self.hand)
 
-print(Dealer())
+    def show_hand(self):
+        return "{} shows: ".format(self.name) + 'X ' + ' '.join([str(card) for card in self.hand.cards[1:]])
+Chuck = Dealer()
+print(Chuck.show_hand())
 
 
 
+class Game:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def __init__(self):
+        self.player = Player()
+        self.dealer = Dealer()
+        self.deck = Deck()
