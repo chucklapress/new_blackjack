@@ -4,19 +4,17 @@ import random
 class Card(object):
     RANKS = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     SUITS = ["c","d","h","s"]
-    Values = {"A": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8,
-              "9": 9, "10": 10, "J": 10, "Q": 10,"K": 10}
 
-    def __init__(self,rank,suit,values):
+
+    def __init__(self,rank,suit):
 
         self.rank = rank
         self.suit = suit
-        self.values = values
+
 
     def __str__(self):
         card = self.rank + self.suit
         return card
-
 
 class Hand(object):
     def __init__(self):
@@ -47,7 +45,7 @@ class Deck(Hand):
     def create(self):
         for suit in Card.SUITS:
             for rank in Card.RANKS:
-                self.add(Card(rank, suit, values=0))
+                self.add(Card(rank, suit))
 
     def shuffle(self):
         random.shuffle(self.cards)
@@ -64,10 +62,11 @@ class Deck(Hand):
 
 deck = Deck()
 deck.create()
-deck.shuffle()
+
+deck1 = []
 deck1 = deck
 
-print(deck1)
+
 Player_hand = Hand()
 Dealer_hand = Hand()
 hands = [Player_hand, Dealer_hand]
@@ -106,9 +105,12 @@ print(Chuck.show_hand())
 
 
 
+
 class Game:
 
     def __init__(self):
         self.player = Player()
         self.dealer = Dealer()
         self.deck = Deck()
+
+

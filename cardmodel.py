@@ -40,7 +40,6 @@ class Deck(object):
 
 
 
-
 deck = Deck()
 deck.shuffle()
 
@@ -55,7 +54,8 @@ for card in deck1:
 class Hand:
 
     def __init__(self):
-        self.cards = [Card(),Card()]
+        self.cards = []
+
 
     def __str__(self):
         return str(self.cards)
@@ -65,10 +65,6 @@ class Hand:
         card = deck.draw()
         self.cards.append(card)
         return card
-    print(card)
-
-
-
 
 
 
@@ -78,11 +74,12 @@ class Player:
         self.hand = Hand()
 
     def __str__(self):
-        return "{} has  ".format(self.name)+ str(self.hand)
+        return "{} has  ".format(self.name) + str(self.hand)
 
-print(Player)
+
 player1 = Player()
 print(player1)
+
 
 class Dealer:
     def __init__(self):
@@ -91,9 +88,10 @@ class Dealer:
 
     def __str__(self):
         return "{} has  ".format(self.name) + str(self.hand)
-print(Dealer)
+
 house_dealer = Dealer()
 print(house_dealer)
+
 
 
 
