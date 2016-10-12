@@ -14,10 +14,10 @@ class Customer(object):
         self.balance += amount
         return self.balance
 
-Chuck = Customer('Chuck LaPress',1000.00)
+Chuck = Customer('Chuck LaPress',4000.00)
 print(Chuck.balance)
 print(Chuck.name)
-Customer.withdrawl(Chuck,900)
+Customer.withdrawl(Chuck,1900)
 print(Chuck.balance)
 Chuck.deposit(350)
 print(Chuck.balance)
