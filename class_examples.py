@@ -54,4 +54,36 @@ print(b)
 print(d)
 print(e)
 
+class Dog():
 
+    kind = 'Canine'
+
+    def __init__(self, name, size, color):
+        self.name = name
+        self.size = size
+        self.color = color
+        self.tricks = []
+
+    def add_trick(self, trick):
+        self.tricks.append(trick)
+
+    def __str__(self):
+        return self.size
+
+d = Dog('Sarge','small','spotted')
+e = Dog('Butch', 'big', 'brown')
+d.add_trick('fetch')
+e.add_trick('heel')
+d.add_trick('roll over')
+e.add_trick('chase the mailman')
+
+print(d.kind)
+print(e.kind)
+print(d.name)
+print(e.name)
+print(e.size)
+print(d.size)
+print(d.color)
+print(e.color)
+print(d.tricks,e.name,e.size,e.color,e.kind)
+print(e.tricks)
