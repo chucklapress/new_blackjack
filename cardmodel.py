@@ -91,9 +91,3 @@ class Dealer:
 
 house_dealer = Dealer()
 print(house_dealer)
-
-
-
-
-
-
